@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Github, Mail, Computer } from 'lucide-vue-next'
+import { Github, Mail } from 'lucide-vue-next'
 
 const aboutMe = ref({
   name: 'Noha',
@@ -11,11 +11,7 @@ const aboutMe = ref({
   //  "where I sell skincare products crafted with care. When I'm not building websites or creating products, you'll find me exploring new ideas and staying active.",
 })
 
-const projects = ref([
-  'Nouricha - Skincare product line',
-  'Vue.js 3 project with Vee-Validate form handling',
-  'Energy ball mix for women packed with superfoods',
-])
+const projects = ref([])
 
 const skills = ref([
   'Software Development (Vue.js, c#, TypeScript)',
@@ -45,19 +41,18 @@ function emailme() {
           {{ aboutMe.description }}
           <a :href="aboutMe.link" class="text-purple-500 underline" target="_blank">{{
             aboutMe.linkText
-          }}</a
-          >,
+          }}</a>
           {{ aboutMe.extra }}
         </p>
       </div>
 
       <!-- Projects Card -->
-      <div class="shadow-xl rounded-2xl p-6 bg-white">
+      <!-- <div class="shadow-xl rounded-2xl p-6 bg-white">
         <h2 class="text-3xl font-bold text-purple-700 mb-2">Projects</h2>
         <ul class="list-disc list-inside text-gray-700">
           <li v-for="(project, index) in projects" :key="index">{{ project }}</li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Skills Card -->
       <div class="shadow-xl rounded-2xl p-6 bg-white">
@@ -223,7 +218,7 @@ function emailme() {
       <!-- Contact Card -->
       <div class="shadow-xl rounded-2xl p-6 bg-white">
         <h2 class="text-3xl font-bold text-purple-700 mb-4">Get in Touch</h2>
-        <div class="flex space-x-4">
+        <div class="getintouch">
           <button
             @click="emailme()"
             class="border border-gray-300 rounded-lg px-4 py-2 flex items-center space-x-2"
@@ -241,9 +236,5 @@ function emailme() {
         </div>
       </div>
     </main>
-
-    <footer class="text-center mt-12 text-gray-500">
-      <p>&copy; 2025 Noha. All rights reserved.</p>
-    </footer>
   </div>
 </template>
